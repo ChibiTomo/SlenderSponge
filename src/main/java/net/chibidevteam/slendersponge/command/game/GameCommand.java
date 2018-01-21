@@ -1,22 +1,20 @@
 package net.chibidevteam.slendersponge.command.game;
 
-import org.spongepowered.api.command.CommandException;
-import org.spongepowered.api.command.CommandResult;
-import org.spongepowered.api.command.CommandSource;
-import org.spongepowered.api.command.args.CommandContext;
-
 import net.chibidevteam.chibispongeplugin.command.AbstractCommand;
+import net.chibidevteam.chibispongeplugin.command.AbstractNamespaceCommand;
+import net.chibidevteam.chibispongeplugin.util.MessageUtils;
 
-public class GameCommand extends AbstractCommand {
+public class GameCommand extends AbstractNamespaceCommand {
 
     public GameCommand() {
         aliases = new String[] { "game" };
+        permission = "slendersponge.slender.game";
         children = new AbstractCommand[] { new StartCommand() };
     }
 
     @Override
-    public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
-        return CommandResult.empty();
+    protected String getHelp() {
+        return MessageUtils.get("command.slender.game.help");
     }
 
 }

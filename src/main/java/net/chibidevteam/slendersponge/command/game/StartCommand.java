@@ -12,12 +12,18 @@ public class StartCommand extends AbstractCommand {
 
     public StartCommand() {
         aliases = new String[] { "start" };
+        permission = "slendersponge.slender.game.start";
     }
 
     @Override
     public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
         src.sendMessage(MessageUtils.getText("command.game.start"));
         return CommandResult.success();
+    }
+
+    @Override
+    protected String getHelp() {
+        return MessageUtils.get("command.slender.game.start.help");
     }
 
 }
