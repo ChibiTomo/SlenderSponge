@@ -10,7 +10,10 @@ import net.chibidevteam.slendersponge.gamemode.GameManager;
 @Plugin(id = PomData.ARTIFACT_ID, name = PomData.NAME, version = PomData.VERSION)
 public class SlenderSponge extends ChibiSpongePlugin {
 
-    private GameManager gameManager;
+    private static final String PAGE_CONFIGURATION_NAME = "pages";
+    private static final String PAGE_CONFIGURATION_FILE = "pages.conf";
+
+    private GameManager         gameManager;
 
     public SlenderSponge() {
         super();
@@ -25,7 +28,7 @@ public class SlenderSponge extends ChibiSpongePlugin {
 
     @Override
     protected void addConfigurations() {
-        // addConfiguration(PAGE_CONFIGURATION_NAME, getConfigDir() +
-        // PAGE_CONFIGURATION_FILE);
+        addConfiguration(PAGE_CONFIGURATION_NAME, getConfigDir() + "/" + PAGE_CONFIGURATION_FILE,
+                PAGE_CONFIGURATION_FILE);
     }
 }
